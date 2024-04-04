@@ -1,3 +1,6 @@
+
+![Micro Services Calculator Architecture](aws-spring-netflix.png)
+
 # Spring Boot Cloud Netflix on Kubernetes Architecture
 
 This document outlines the architecture of a microservices-based system utilizing Spring Boot Cloud Netflix components, deployed on Kubernetes (K8S). The system is designed for high availability, scalability, and robust service discovery and monitoring.
