@@ -98,8 +98,8 @@ Download the latest release of Istio with the following command:
 
 ### Install project
 - cd /tmp
-- git clone https://github.com/maxiplux/Project-8---Observability-Systems.git
-- cd Project-8---Observability-Systems
+- git clone https://github.com/maxiplux/Final-Capstone-Project-weclouddata.git
+- cd Final-Capstone-Project-weclouddata
 - chmod +x *.sh
 ![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/c9873bbe-81b8-4b5f-9f63-b939397b0c4c)
 
