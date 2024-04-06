@@ -175,7 +175,7 @@ resource "aws_instance" "terraform_instance_master" {
   ami      = "ami-080e1f13689e07408"
   key_name = aws_key_pair.generated_key.key_name
 
-  instance_type = "t2.medium"
+  instance_type = "t3.large"
   ebs_block_device {
     device_name = "/dev/sda1"  # The device name might vary based on the instance type and OS
     volume_type = "gp2"        # General Purpose SSD
