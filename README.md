@@ -74,7 +74,7 @@ The system is structured into several components, each running within the AWS cl
 >	All the commands must be run as ubuntu user or any local user ( default user) .
 
 > [!NOTE]
-> You should try to understand each folder in Project-8---Observability-Systems/ (https://github.com/maxiplux/Project-8---Observability-Systems).
+> You should try to understand each folder in Project-8---Observability-Systems/ (https://github.com/maxiplux/Final-Capstone-Project-weclouddata.git).
 ## Instalation.
 - Setup your local docker-desktop with Kubernetes.
 
