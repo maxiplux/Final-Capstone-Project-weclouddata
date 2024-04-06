@@ -74,9 +74,24 @@ The system is structured into several components, each running within the AWS cl
 >	All the commands must be run as ubuntu user or any local user ( default user) .
 
 > [!NOTE]
-> You should try to understand each folder in Project-8---Observability-Systems/ (https://github.com/maxiplux/Final-Capstone-Project-weclouddata.git).
+> You should try to understand each folder in Final-Capstone-Project (https://github.com/maxiplux/Final-Capstone-Project-weclouddata.git).
 ## Instalation.
-- Setup your local docker-desktop with Kubernetes.
+- Setup your K8S cluster.
+- Setup local enviroment and AWS MACHINE.
+- git clone https://github.com/maxiplux/Final-Capstone-Project-weclouddata.git
+- ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/a63771ca-26f4-4895-af3b-8f47617df3fe)
+- cd  /tmp/Final-Capstone-Project-weclouddata
+- terraform init
+- terraform apply  -auto-approve
+- terraform output -raw iam_user_secret_access_key
+- copy in a notepad the secret key and access key
+- Now we are going to create an AWS machine
+- cd  /tmp/Final-Capstone-Project-weclouddata/aws-jenkins-machine/terraform
+- ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/da809ed9-b7d9-4166-bcad-fb17440ba94d)
+- 
+
+
+
 
 
 # Istio Installation Guide
