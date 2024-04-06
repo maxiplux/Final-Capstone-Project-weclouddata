@@ -224,7 +224,8 @@ resource "aws_instance" "terraform_instance_master" {
               cd /tmp && curl -LO  https://dl.k8s.io/release/v1.28.0/bin/linux/amd64/kubectl && chmod +x ./kubectl && mv kubectl /usr/local/bin
               cd /tmp && wget https://raw.githubusercontent.com/maxiplux/project-7-jenkins-to-eks/main/aws-jenkins-machine/docker-compose.yml
               cd /tmp && docker compose up -d
-              docker exec -it jenkins  /etc/init.d/jenkins start
+              cd /tmp && wget https://raw.githubusercontent.com/maxiplux/project-7-jenkins-to-eks/main/aws-jenkins-machine/is-running-jenkins.sh
+              cd /tmp && chmod +x is-running-jenkins.sh && sh is-running-jenkins.sh            
               echo "echo found" > /tmp/STATUS
               EOF
 }
