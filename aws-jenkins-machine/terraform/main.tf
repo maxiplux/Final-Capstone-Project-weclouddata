@@ -225,8 +225,10 @@ resource "aws_instance" "terraform_instance_master" {
               cd /tmp && wget https://raw.githubusercontent.com/maxiplux/project-7-jenkins-to-eks/main/aws-jenkins-machine/docker-compose.yml
               cd /tmp && docker compose up -d
               cd /tmp && wget https://raw.githubusercontent.com/maxiplux/project-7-jenkins-to-eks/main/aws-jenkins-machine/is-running-jenkins.sh
-              cd /tmp && chmod +x is-running-jenkins.sh && sh is-running-jenkins.sh            
+              cd /tmp && chmod +x is-running-jenkins.sh && sh is-running-jenkins.sh
+              sh /tmp/is-running-jenkins.sh
               echo "echo found" > /tmp/STATUS
+              
               EOF
 }
 
