@@ -88,7 +88,12 @@ The system is structured into several components, each running within the AWS cl
 - Now we are going to create an AWS machine
 - cd  /tmp/Final-Capstone-Project-weclouddata/aws-jenkins-machine/terraform
 - ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/da809ed9-b7d9-4166-bcad-fb17440ba94d)
-- 
+- Do Login in your AWS console and Go to your Jenkins Machine
+- Go to the SSH AWS console and execute the command
+- sh /tmp/is-running-jenkins.sh
+- ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/1f6213fa-de9c-4c16-a4ff-c69b36131272)
+- ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/4903b051-fd44-4e30-80c9-d4588ec51914)
+
 
 
 
