@@ -151,13 +151,7 @@ The system is structured into several components, each running within the AWS cl
 - Finally we are going to setup our K8S inside of our Jenkins machine,and thanks to it we will be able to run automatically K8S
 - aws eks update-kubeconfig   --region us-east-1 --name weclouddata
 - ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/3a60ddb3-dad0-4f9d-b244-9cfaa49d804e)
-
-
-
-
-
-
-
+# Install and deploy the Spring boot Cloud Netflix App + Istio and ( Prometheus, Graphana and Loki)
 ### Istio Installation Guide
 ## Prerequisites
 
@@ -171,28 +165,26 @@ Download the latest release of Istio with the following command:
 - cd istio-1.21.0
 - export PATH=$PWD/bin:$PATH
 - istioctl install --set profile=demo -y
-![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/f6ce85eb-c7d3-4fae-bf05-06e05ff45568)
+- ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/104e92e5-e6fa-4aaf-a630-15211d6edc85)
+
+
 
 ### Install project
 - cd /tmp
-- git clone https://github.com/maxiplux/Final-Capstone-Project-weclouddata.git
 - cd Final-Capstone-Project-weclouddata
 - chmod +x *.sh
 - ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/e54712bd-e022-41e0-804b-ae43419e431a)
-
-
-
 - sh monitoring.sh
+- ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/44f503b3-9394-4dc6-8cef-c13b97753889)
+
 - kubectl apply -f namespace.yml 
 - kubectl label namespace weclouddata istio-injection=enabled
-- ![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/8d43d8f8-2066-4b59-8046-a04eecff236e)
- 
+- ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/edee1231-d737-4218-8ad2-c105099eb5a7) 
 - sh deployer.sh
-- ![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/2bab3930-d7a9-46d1-8076-b5fc465f2c90)
-- kubectl get svc -n weclouddata | grep math-add-subtract
-- ![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/84fddace-9d1d-4bf3-b2f5-b32b5f1c4b9d)
-- kubectl get svc -n weclouddata | grep math-division-multiplication
-- ![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/8b45e50e-e011-497e-8033-8bdb8236aae7)
+- ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/4853eab0-f4da-455e-842a-a79b10393e5b)
+- kubectl get svc -n weclouddata
+- ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/0ebaae67-05cb-4059-a571-e496c8bbd002)
+
 ###
 - As you can see, we have two micro services running in our cluster under namespace weclouddata. We need to generate trafic to them.
 - To achive that, we need to target by http the ports 31181 and 31979. Those ports are going to be the arguments to test our  micro services.
