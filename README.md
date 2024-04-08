@@ -136,6 +136,22 @@ The system is structured into several components, each running within the AWS cl
 - The settings for this cluster is below
 - ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/2bea999f-2368-4750-a425-67507f4d53c1)
 - ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/55c3509e-2e40-48ad-ab90-9532f31ef19c)
+- Update the AWS cli 
+- pip3 install awscli --upgrade --user
+- refresh the kubectl config
+- aws eks update-kubeconfig   --region us-east-1 --name weclouddata
+- now we need to update our K8S in our EC2 JENKINS DOCKER CONTAINER.
+- docker exec -ti jenkins bash
+- Then change the root user to jenkins user.
+- su jenkins
+- Execute the following commands
+- aws configure # With your secret key and access key
+- pip3 install awscli --upgrade --user
+- aws configure # you need to put here i
+- Finally we are going to setup our K8S inside of our Jenkins machine,and thanks to it we will be able to run automatically K8S
+- aws eks update-kubeconfig   --region us-east-1 --name weclouddata
+- ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/3a60ddb3-dad0-4f9d-b244-9cfaa49d804e)
+
 
 
 
