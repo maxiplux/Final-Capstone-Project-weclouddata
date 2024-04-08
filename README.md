@@ -99,6 +99,10 @@ The system is structured into several components, each running within the AWS cl
 - You should clone the project in https://github.com/maxiplux/k8s-istio-math.git and setup it in your Jenkins server.
 - In addition you need to setup the enviroment variables DOCKER_PASSWORD & DOCKER_USERNAME with your docker hub credentials.
 - ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/0ff1d861-4701-4813-8742-aedf338791b8)
+- Now we need to setup our K8S cluster.
+- As you can see we are seeing some errors in our pipelines because we need to setup K8S.
+- ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/0d722eee-9d3b-4e2e-b88b-eb4a1132e27b)
+- ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/92e8c666-46db-456f-a664-6844adea9be1)
 
 
 
@@ -108,14 +112,43 @@ The system is structured into several components, each running within the AWS cl
 
 
 
-# Istio Installation Guide
+
+#Amazon Elastic Kubernetes Service (Amazon EKS)
+## Setup AWS permissions
+- Go to /tmp/Final-Capstone-Project-weclouddata/aws-eks-permissions
+- Execute the following commands.
+- terraform init
+- terraform apply  -auto-approve
+- terraform output -raw iam_user_secret_access_key
+- With the secret key and access key, you should be able to create your K8S cluster in your EC2 Jenkins machine
+- Execute the following commands in your EC2 Machine.
+- 
+- aws configure  # This is to setup your AWS credentials 
+- aws ec2 describe-instances # This is to test your connection
+## Create AWS K8S CLUSTER
+- Clone the project https://github.com/maxiplux/project-7-jenkins-to-eks.git and then go to /tmp/Final-Capstone-Project-weclouddata/aws-eks-cluster
+- You can see this in action
+- ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/e9c755a7-eb94-439c-9de2-630fc91b113d)
+- Install EKSCTL
+- sh eks-installer.sh
+- ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/47c6c6d3-04ae-4fb8-8d68-34fe196d2230)
+- Now we are going to create our cluster with the command `sh install-cluster.sh`
+- The settings for this cluster is below
+- ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/2bea999f-2368-4750-a425-67507f4d53c1)
+- ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/55c3509e-2e40-48ad-ab90-9532f31ef19c)
+
+
+
+
+
+
+### Istio Installation Guide
 ## Prerequisites
 
 - A Kubernetes cluster with versions: 1.26, 1.27, 1.28, or 1.29.
 - `kubectl` installed and configured to access your cluster.
 
-### Download Istio
-
+### Download Istio in your local machine
 Download the latest release of Istio with the following command:
 - cd /tmp
 - curl -L https://istio.io/downloadIstio | sh -
@@ -124,13 +157,14 @@ Download the latest release of Istio with the following command:
 - istioctl install --set profile=demo -y
 ![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/f6ce85eb-c7d3-4fae-bf05-06e05ff45568)
 
-
 ### Install project
 - cd /tmp
 - git clone https://github.com/maxiplux/Final-Capstone-Project-weclouddata.git
 - cd Final-Capstone-Project-weclouddata
 - chmod +x *.sh
-![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/c9873bbe-81b8-4b5f-9f63-b939397b0c4c)
+- ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/e54712bd-e022-41e0-804b-ae43419e431a)
+
+
 
 - sh monitoring.sh
 - kubectl apply -f namespace.yml 
