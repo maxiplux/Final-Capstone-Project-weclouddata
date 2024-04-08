@@ -10,4 +10,4 @@ spec:
     - protocol: TCP
       port: 8075
       targetPort: 8075
-  type: NodePort
+  type: LoadBalancer
