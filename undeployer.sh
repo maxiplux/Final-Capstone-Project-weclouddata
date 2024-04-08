@@ -1,2 +1,2 @@
 CURRENT=${PWD}
-cd ${CURRENT}/ && kubectl delete -f  namespace.yml
+cd ${CURRENT} && kubectl delete -f  namespace.yml
