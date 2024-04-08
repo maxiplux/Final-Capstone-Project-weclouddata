@@ -91,8 +91,17 @@ The system is structured into several components, each running within the AWS cl
 - Do Login in your AWS console and Go to your Jenkins Machine
 - Go to the SSH AWS console and execute the command
 - sh /tmp/is-running-jenkins.sh
-- ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/1f6213fa-de9c-4c16-a4ff-c69b36131272)
+- ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/aab9097f-96c7-4933-8a68-ef33915de496)
 - ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/4903b051-fd44-4e30-80c9-d4588ec51914)
+- After this, return to your local console to see your terraform script end sucessfully.
+- ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/db68b284-da08-4d11-b53a-69cc474221cc)
+- After this you should be able to go to your jenkins server and setup the Spring Boot Netflix Java project.
+- You should clone the project in https://github.com/maxiplux/k8s-istio-math.git and setup it in your Jenkins server.
+- In addition you need to setup the enviroment variables DOCKER_PASSWORD & DOCKER_USERNAME with your docker hub credentials.
+- ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/0ff1d861-4701-4813-8742-aedf338791b8)
+
+
+
 
 
 
