@@ -6,7 +6,17 @@ metadata:
   name: weclouddata
   region: us-east-1
 
-
+iam:
+  withOIDC: true
+  serviceAccounts:
+    - metadata:
+        name: ebs-csi-controller-sa
+        namespace: kube-system
+      wellKnownPolicies:
+        ebsCSIController: true
+      attachPolicyARNs:
+        - arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy
+      roleName: AmazonEKS_EBS_CSI_DriverRole
 
 nodeGroups:
   - name: ng-1
