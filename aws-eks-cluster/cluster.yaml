@@ -11,13 +11,14 @@ metadata:
 nodeGroups:
   - name: ng-1
     instanceType: t4g.medium
-    desiredCapacity: 2
+    desiredCapacity: 1
+    volumeSize: 100
+    minSize: 1
+    maxSize: 4
   - name: ng-2
     instanceType: t4g.medium
-    desiredCapacity: 2
-  - name: ng-3
-    instanceType: t4g.medium
-    desiredCapacity: 2
-  - name: ng-4
-    instanceType: t4g.medium
-    desiredCapacity: 2    
+    desiredCapacity: 1
+    volumeSize: 100
+    minSize: 1
+    maxSize: 4
+
