@@ -136,6 +136,9 @@ The system is structured into several components, each running within the AWS cl
 - The settings for this cluster is below
 - ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/2bea999f-2368-4750-a425-67507f4d53c1)
 - ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/55c3509e-2e40-48ad-ab90-9532f31ef19c)
+- ### Please, pay attetion about the roles and permissions for the PVC ( AmazonEKS_EBS_CSI_DriverRole).This is an important flag for LOKI. 
+- ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/611debbe-3ecc-4a9f-b2e4-c77edecd6709)
+
 - Update the AWS cli 
 - pip3 install awscli --upgrade --user
 - refresh the kubectl config
