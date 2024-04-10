@@ -27,14 +27,14 @@ def calll_api(api_gateway=False,route="division-multiplication",server="localhos
     print (f"Server: {server}, Port: {port}, Service: {services}, a: {a}, b: {b}, Response: {value}")
 
     return value
-def main(api_gateway=False,math_add_subtract=31181,math_division_multiplication=31181):
+def main(server="localhost",api_gateway=False,math_add_subtract=31181,math_division_multiplication=31181):
     processes = []
     print(f"Math Add Subtract Port: {math_add_subtract}")
     print(f"Math Division Multiplication Port: {math_division_multiplication}")
 
     for i in range (0,1000):
         random_number = random.randint(0,500)
-        server="localhost"
+        
 
         calls = [
             (False,'',server,"multiplication",random_number,random.randint(0,500),math_division_multiplication),
@@ -75,19 +75,24 @@ if __name__ == '__main__':
     math_add_subtract = 0
     math_division_multiplication = 0
     api_gateway = False
+    server = "a9642b4cace984387a8694b81b9ef777-1436319440.us-east-1.elb.amazonaws.com"
 
 
     for arg in sys.argv[1:]:
         if "=" in arg:
-            operation, num = arg.split("=")
+            operation, num_or_server = arg.split("=")
 
             if operation == "math-add-subtract":
-                math_add_subtract = int(num)
+                math_add_subtract = int(num_or_server)
             if operation == "math-division-multiplication":
-                math_division_multiplication = int(num)
+                math_division_multiplication = int(num_or_server)
             if operation == "api-gateway":
                 api_gateway = True
+            if operation == "server":
+                server = num_or_server
+
             #pdb.set_trace()
+            
 
 
 
@@ -96,9 +101,11 @@ if __name__ == '__main__':
         print("Please provide the math_add_subtract and math_division_multiplication values")
         sys.exit(1)
 
-
-
-
-    main(math_add_subtract=math_add_subtract,math_division_multiplication=math_division_multiplication)
-# python tester.py  math-add-subtract=31979 math-division-multiplication=31181 api-gateway=True
-# python tester.py  math-add-subtract=31979 math-division-multiplication=31181
+    if api_gateway:
+        print("API Gateway: True")
+        main(server=server,api_gateway=True,math_add_subtract=math_add_subtract,math_division_multiplication=math_division_multiplication)
+    else:
+        main(math_add_subtract=math_add_subtract,math_division_multiplication=math_division_multiplication)
+#ulimit -n 1000000
+# python3 tester.py  math-add-subtract=8075 math-division-multiplication=8075 api-gateway=True server=a9642b4cace984387a8694b81b9ef777-1436319440.us-east-1.elb.amazonaws.com
+# python3 tester.py  math-add-subtract=31979 math-division-multiplication=31181
