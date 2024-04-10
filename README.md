@@ -187,6 +187,8 @@ Download the latest release of Istio with the following command:
 - ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/4853eab0-f4da-455e-842a-a79b10393e5b)
 - kubectl get svc -n weclouddata
 - ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/0ebaae67-05cb-4059-a571-e496c8bbd002)
+- http://a9642b4cace984387a8694b81b9ef777-1436319440.us-east-1.elb.amazonaws.com:8075/division-multiplication/swagger-ui/index.html#/home/division
+- http://a9642b4cace984387a8694b81b9ef777-1436319440.us-east-1.elb.amazonaws.com:8075/division-multiplication/v3/api-docs
 
 ###
 - As you can see, we have two micro services running in our cluster under namespace weclouddata. We need to generate trafic to them.
