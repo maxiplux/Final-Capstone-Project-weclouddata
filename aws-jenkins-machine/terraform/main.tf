@@ -113,7 +113,7 @@ resource "aws_security_group" "terraform_security_group" {
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
     description      = "HTTP access"
-    from_port        = 8080
+    from_port        = 3000
     to_port          = 50000
     protocol         = "TCP"
   }
