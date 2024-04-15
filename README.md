@@ -209,16 +209,20 @@ Download the latest release of Istio with the following command:
 
 - In this context we are focus only in the services math-division-multiplication and math-add-subtract. 
 ### Graphana/Loki ( Now we are see in action all the trafic thanks to Graphana)
-- kubectl port-forward svc/grafana 3000:3000 -n istio-system
+- istioctl dashboard grafana --address 0.0.0.0
 - Go to Graphana -> Datasources -> Loki -> Label Filters = math-add-subtract or math-division-multiplication.
-- ![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/438c94a4-2d72-428e-ae88-c5f90dddbf1d)
+- ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/01c2b8bc-1c71-484e-93b0-acd9528726be)
+- ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/5c9016c1-2a34-4cf5-a8da-6139c114711d)
+
+
 ### Graphana/Prometheus
 - Import Spring Dashboard. 
 - Graphana -> Home -> Dashboards-> Import Dashboard into Folder Istio using Datasource Prometheus
 - Upload the file in the folder /graphana-dashboard/spring-boot-dashboard.json
-- ![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/2782346b-4bc3-40cd-a361-a2754c7f8148)
-- ![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/3ad2196a-5468-4f61-8ecb-a1816d1e32a4)
-- ![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/fef53247-d532-4f10-9163-f1a0d6a080aa)
+- ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/8f38ba49-cdfa-448b-bd71-12e5b3ebe19d)
+- ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/62ca0e72-79c8-46a6-b41c-9427b4a42776)
+
+
 ### Unistall components
 - kubectl delete namespace istio-system
 - kubectl delete namespace weclouddata
