@@ -193,16 +193,20 @@ Download the latest release of Istio with the following command:
 
 ###
 - As you can see, we have two micro services running in our cluster under namespace weclouddata. We need to generate trafic to them.
-- To achive that, we need to target by http the ports 31181 and 31979. Those ports are going to be the arguments to test our  micro services.
-- These ports are relative to your machine, therefore  math-add-subtract=31979 and math-division-multiplication 31181. Thanks to it you can call the strees tool below. 
+- To achive that, we need to target by http the port 8075 from our LB. In addition, the port and the server will be the argument for our python tester app.- 
+- Please, execute the commands below to execute a python script, and thanks to it we can generate trafic to our cluster.
+- ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/0b2084e9-cb8b-4945-9710-715a2bfeb8df)
+- 
 - ulimit -S -n 15000
-- sh monitoring.sh
-- python3 tester.py  math-add-subtract=31979 math-division-multiplication=31181
-- ![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/27840eb8-e89d-4550-8352-d9b142d4abd2)
+- python3 tester.py  math-add-subtract=8075 math-division-multiplication=8075 api-gateway=True server=a5a779c6c723046bdb27a3b63b9c7ffb-699122349.us-east-1.elb.amazonaws.com
+- ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/3929630c-c28b-445c-802b-b72a793df7dc)
+
 - Now we can see the results about it
 ### Results
-- istioctl dashboard kiali
-- ![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/14f701d8-2f20-4d5b-baf0-16d0f96773e3)
+- istioctl dashboard kiali --address 0.0.0.0
+- ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/67c13834-46b2-4db9-834d-b41a198c5fe7)
+
+
 - In this context we are focus only in the services math-division-multiplication and math-add-subtract. 
 ### Graphana/Loki ( Now we are see in action all the trafic thanks to Graphana)
 - kubectl port-forward svc/grafana 3000:3000 -n istio-system
