@@ -127,6 +127,7 @@ The system is structured into several components, each running within the AWS cl
 - aws ec2 describe-instances # This is to test your connection
 ## Create AWS K8S CLUSTER
 - Clone the project https://github.com/maxiplux/project-7-jenkins-to-eks.git and then go to /tmp/Final-Capstone-Project-weclouddata/aws-eks-cluster
+- cd /tmp/Final-Capstone-Project-weclouddata/aws-eks-cluster
 - You can see this in action
 - ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/e9c755a7-eb94-439c-9de2-630fc91b113d)
 - Install EKSCTL
