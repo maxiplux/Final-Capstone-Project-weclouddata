@@ -221,6 +221,9 @@ Download the latest release of Istio with the following command:
 - Upload the file in the folder /graphana-dashboard/spring-boot-dashboard.json
 - ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/8f38ba49-cdfa-448b-bd71-12e5b3ebe19d)
 - ![image](https://github.com/maxiplux/Final-Capstone-Project-weclouddata/assets/950541/62ca0e72-79c8-46a6-b41c-9427b4a42776)
+### Video
+- https://youtu.be/i4VNP_EcV0w
+
 
 
 ### Unistall components
